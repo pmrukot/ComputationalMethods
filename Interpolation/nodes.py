@@ -4,13 +4,7 @@ from function import fun
 
 
 def get_regular_interpolation_nodes(n, start, end):
-    interval = end - start
-    step = interval / n
-    points = []
-    for x in np.arange(start, end, step):
-        points.append((x, fun(x)))
-    points.append((end, fun(end)))
-    return points
+    return [(x, fun(x)) for x in np.linspace(start, end, n)]
 
 
 def get_czebyshev_interpolation_nodes(n, start, end):
